@@ -1,4 +1,7 @@
-import {Fragment, React} from 'react'
+import {Fragment, React} from 'react';
+
+import CounterApp from './CounterApp';
+import PropTypes from "prop-types";
 
 // ? Cuando existe un elemento que no usa hooks o no es propio del functional component, debería estar fuera del mismo.
 const nombre = "Haziel";
@@ -28,8 +31,16 @@ const FirstApp = ( {title = "titulo por defecto", subTitle = 0} ) => {
         <p>{ 2 * 5 }</p>
         <p>{ getSaludo() }</p>
         <h2>Soy un subtitulo</h2>
+
+        {/* Tarea */}
+        <h1>Tarea Práctica:</h1>
+        <CounterApp value={5}/>
     </>
   )
+}
+
+FirstApp.propTypes = {
+  title: PropTypes.string.isRequired,
 }
 
 export default FirstApp
